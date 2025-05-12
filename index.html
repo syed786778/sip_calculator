@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f7f9fc;
@@ -19,7 +19,6 @@
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
         }
         h1 {
             color: #2c3e50;
@@ -27,166 +26,86 @@
             margin-bottom: 30px;
             text-align: center;
         }
-        .columns-container {
+        .input-row {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
-        }
-        .column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .column-header {
-            background-color: #f2f6fc;
-            color: #2c3e50;
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 6px 6px 0 0;
-            border: 1px solid #ddd;
-            margin-bottom: -1px;
-        }
-        .input-container {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 0 0 6px 6px;
-            padding: 15px;
             margin-bottom: 20px;
+        }
+        .input-column {
+            flex: 1;
+            margin: 0 10px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .input-column h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 18px;
         }
         .form-group {
             margin-bottom: 15px;
         }
         label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: 600;
             color: #2c3e50;
-            font-size: 14px;
         }
-        input[type="number"] {
+        input[type="number"], input[type="text"] {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
+            border-radius: 6px;
+            font-size: 16px;
             box-sizing: border-box;
         }
-        input[disabled] {
-            background-color: #f2f2f2;
-            cursor: not-allowed;
-        }
-        button {
+        .calculate-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
             background-color: #3498db;
             color: white;
             border: none;
-            padding: 12px 20px;
             border-radius: 6px;
+            font-size: 18px;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            width: 100%;
             margin-top: 20px;
+            transition: background-color 0.3s;
         }
-        button:hover {
+        .calculate-btn:hover {
             background-color: #2980b9;
         }
-        .output-table {
-            border-collapse: collapse;
+        .results-table {
             width: 100%;
-            margin-top: 10px;
-            font-size: 14px;
+            border-collapse: collapse;
+            margin-top: 30px;
         }
-        .output-table th, .output-table td {
+        .results-table th, .results-table td {
             border: 1px solid #ddd;
             padding: 12px;
             text-align: center;
         }
-        .output-table th {
+        .results-table th {
             background-color: #f2f6fc;
             color: #2c3e50;
-            font-weight: 600;
         }
-        .output-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .output-table tr:hover {
-            background-color: #f0f7ff;
-        }
-        .output-table td:first-child {
-            text-align: left;
-            font-weight: 600;
-            background-color: #f2f6fc;
-        }
-        .currency:before {
+        .results-table .currency:before {
             content: "₹ ";
         }
-        .initial-investment {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            background-color: #f8f9fa;
+        .monthly-return {
+            color: #888;
+            font-size: 0.9em;
         }
-        .initial-investment label {
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .initial-investment input {
-            max-width: 150px;
-        }
-        .tab-container {
-            margin-top: 20px;
-        }
-        .tab {
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
-            border-radius: 6px 6px 0 0;
-        }
-        .tab button {
-            background-color: inherit;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            transition: 0.3s;
-            font-size: 15px;
-            width: auto;
-            margin: 0;
-            border-radius: 0;
-            color: #2c3e50;
-        }
-        .tab button:hover {
-            background-color: #ddd;
-        }
-        .tab button.active {
-            background-color: #3498db;
-            color: white;
-        }
-        .tabcontent {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-top: none;
-            border-radius: 0 0 6px 6px;
-            animation: fadeEffect 1s;
-        }
-        @keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        .table-responsive {
-            overflow-x: auto;
-        }
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #7f8c8d;
-            font-size: 14px;
+        @media (max-width: 768px) {
+            .input-row {
+                flex-direction: column;
+            }
+            .input-column {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -194,351 +113,179 @@
     <div class="calculator">
         <h1>SIP Investment Calculator</h1>
         
-        <div class="initial-investment">
-            <label for="initial-investment">Initial SIP Amount (₹)</label>
-            <input type="number" id="initial-investment" min="100" step="100" value="15000">
-        </div>
-        
-        <div class="columns-container">
-            <!-- 5 Years Column -->
-            <div class="column">
-                <div class="column-header">5 Years</div>
-                <div class="input-container">
-                    <div class="form-group">
-                        <label for="annual-increase-5y">Annual Increase in SIP (%)</label>
-                        <input type="number" id="annual-increase-5y" min="0" max="100" step="1" value="5">
-                    </div>
-                    <div class="form-group">
-                        <label for="annual-returns-5y">Annual Returns (%)</label>
-                        <input type="number" id="annual-returns-5y" min="1" max="100" step="0.1" value="14">
-                    </div>
-                    <div class="form-group">
-                        <label for="monthly-returns-5y">Monthly Returns (%) (Auto-calculated)</label>
-                        <input type="number" id="monthly-returns-5y" disabled>
-                    </div>
+        <div class="input-row">
+            <div class="input-column">
+                <h2>5 Years</h2>
+                <div class="form-group">
+                    <label for="sip-5y">SIP Investment (Rs.)</label>
+                    <input type="number" id="sip-5y" value="15000" min="1000" step="100">
                 </div>
-                <div class="result-container">
-                    <table class="output-table">
-                        <tr>
-                            <td>SIP Investment (Rs.)</td>
-                            <td id="summary-sip-5y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Annual Increase in SIP (%)</td>
-                            <td id="summary-increase-5y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Annual Returns (%)</td>
-                            <td id="summary-returns-annual-5y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Returns (%)</td>
-                            <td id="summary-returns-monthly-5y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Portfolio Value (Rs.)</td>
-                            <td class="currency" id="summary-value-5y">-</td>
-                        </tr>
-                    </table>
+                <div class="form-group">
+                    <label for="increase-5y">Annual Increase in SIP (%)</label>
+                    <input type="number" id="increase-5y" value="5" min="0" max="100" step="1">
+                </div>
+                <div class="form-group">
+                    <label for="return-5y">Annual Returns (%)</label>
+                    <input type="number" id="return-5y" value="14" min="0" max="100" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label for="monthly-return-5y">Monthly Returns (%)</label>
+                    <input type="number" id="monthly-return-5y" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="portfolio-5y">Portfolio Value (Rs.)</label>
+                    <input type="text" id="portfolio-5y" disabled>
                 </div>
             </div>
             
-            <!-- 10 Years Column -->
-            <div class="column">
-                <div class="column-header">10 Years</div>
-                <div class="input-container">
-                    <div class="form-group">
-                        <label for="annual-increase-10y">Annual Increase in SIP (%)</label>
-                        <input type="number" id="annual-increase-10y" min="0" max="100" step="1" value="0">
-                    </div>
-                    <div class="form-group">
-                        <label for="annual-returns-10y">Annual Returns (%)</label>
-                        <input type="number" id="annual-returns-10y" min="1" max="100" step="0.1" value="14">
-                    </div>
-                    <div class="form-group">
-                        <label for="monthly-returns-10y">Monthly Returns (%) (Auto-calculated)</label>
-                        <input type="number" id="monthly-returns-10y" disabled>
-                    </div>
+            <div class="input-column">
+                <h2>10 Years</h2>
+                <div class="form-group">
+                    <label for="sip-10y">SIP Investment (Rs.)</label>
+                    <input type="number" id="sip-10y" value="15000" min="1000" step="100">
                 </div>
-                <div class="result-container">
-                    <table class="output-table">
-                        <tr>
-                            <td>SIP Investment (Rs.)</td>
-                            <td id="summary-sip-10y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Annual Increase in SIP (%)</td>
-                            <td id="summary-increase-10y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Annual Returns (%)</td>
-                            <td id="summary-returns-annual-10y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Returns (%)</td>
-                            <td id="summary-returns-monthly-10y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Portfolio Value (Rs.)</td>
-                            <td class="currency" id="summary-value-10y">-</td>
-                        </tr>
-                    </table>
+                <div class="form-group">
+                    <label for="increase-10y">Annual Increase in SIP (%)</label>
+                    <input type="number" id="increase-10y" value="0" min="0" max="100" step="1">
+                </div>
+                <div class="form-group">
+                    <label for="return-10y">Annual Returns (%)</label>
+                    <input type="number" id="return-10y" value="14" min="0" max="100" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label for="monthly-return-10y">Monthly Returns (%)</label>
+                    <input type="number" id="monthly-return-10y" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="portfolio-10y">Portfolio Value (Rs.)</label>
+                    <input type="text" id="portfolio-10y" disabled>
                 </div>
             </div>
             
-            <!-- 15 Years Column -->
-            <div class="column">
-                <div class="column-header">15 Years</div>
-                <div class="input-container">
-                    <div class="form-group">
-                        <label for="annual-increase-15y">Annual Increase in SIP (%)</label>
-                        <input type="number" id="annual-increase-15y" min="0" max="100" step="1" value="4">
-                    </div>
-                    <div class="form-group">
-                        <label for="annual-returns-15y">Annual Returns (%)</label>
-                        <input type="number" id="annual-returns-15y" min="1" max="100" step="0.1" value="10">
-                    </div>
-                    <div class="form-group">
-                        <label for="monthly-returns-15y">Monthly Returns (%) (Auto-calculated)</label>
-                        <input type="number" id="monthly-returns-15y" disabled>
-                    </div>
+            <div class="input-column">
+                <h2>15 Years</h2>
+                <div class="form-group">
+                    <label for="sip-15y">SIP Investment (Rs.)</label>
+                    <input type="number" id="sip-15y" value="15000" min="1000" step="100">
                 </div>
-                <div class="result-container">
-                    <table class="output-table">
-                        <tr>
-                            <td>SIP Investment (Rs.)</td>
-                            <td id="summary-sip-15y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Annual Increase in SIP (%)</td>
-                            <td id="summary-increase-15y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Annual Returns (%)</td>
-                            <td id="summary-returns-annual-15y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Returns (%)</td>
-                            <td id="summary-returns-monthly-15y">-</td>
-                        </tr>
-                        <tr>
-                            <td>Portfolio Value (Rs.)</td>
-                            <td class="currency" id="summary-value-15y">-</td>
-                        </tr>
-                    </table>
+                <div class="form-group">
+                    <label for="increase-15y">Annual Increase in SIP (%)</label>
+                    <input type="number" id="increase-15y" value="4" min="0" max="100" step="1">
+                </div>
+                <div class="form-group">
+                    <label for="return-15y">Annual Returns (%)</label>
+                    <input type="number" id="return-15y" value="10" min="0" max="100" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label for="monthly-return-15y">Monthly Returns (%)</label>
+                    <input type="number" id="monthly-return-15y" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="portfolio-15y">Portfolio Value (Rs.)</label>
+                    <input type="text" id="portfolio-15y" disabled>
                 </div>
             </div>
         </div>
         
-        <button id="calculate">Calculate SIP Returns</button>
-        
-        <div class="tab-container">
-            <div class="tab">
-                <button class="tablinks active" onclick="openTab(event, 'DetailedView')">Month-by-Month View</button>
-            </div>
-            
-            <div id="DetailedView" class="tabcontent" style="display: block;">
-                <div class="table-responsive">
-                    <table class="output-table" id="detailed-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Month-Year</th>
-                                <th>SIP Amount (Rs.) for 5-years</th>
-                                <th>Portfolio Value 5 Years (Rs.)</th>
-                                <th>SIP Amount (Rs.) for 10-years</th>
-                                <th>Portfolio Value 10 Years (Rs.)</th>
-                                <th>SIP Amount (Rs.) for 15-years</th>
-                                <th>Portfolio Value 15 Years(Rs.)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="detailed-tbody">
-                            <!-- This will be filled by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <button class="calculate-btn" id="calculate-btn">Calculate Investment</button>
     </div>
-    
-    <footer>
-        <p>SIP Investment Calculator | <a href="https://github.com/yourusername/sip-calculator" target="_blank">GitHub Repository</a></p>
-    </footer>
 
     <script>
-        // Function to open tabs
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-        
-        // Function to format currency
-        function formatCurrency(amount) {
-            return new Intl.NumberFormat('en-IN', { 
-                maximumFractionDigits: 0 
-            }).format(amount);
-        }
-        
-        // Function to calculate monthly returns from annual returns
+        // Correct monthly returns calculation using compound method
         function calculateMonthlyReturn(annualReturn) {
-            // Formula: Monthly Return = (1 + Annual Return)^(1/12) - 1
+            // Compound method for accurate monthly return
             return (Math.pow(1 + annualReturn / 100, 1/12) - 1) * 100;
         }
-        
-        // Function to get month name
-        function getMonthName(month) {
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            return monthNames[month];
+
+        // Format number with commas
+        function formatCurrency(num) {
+            return new Intl.NumberFormat('en-IN', { 
+                style: 'currency', 
+                currency: 'INR',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(num).replace('₹', '');
         }
-        
-        // Function to calculate SIP returns
-        function calculateSIP() {
-            // Get input values
-            const initialInvestment = parseFloat(document.getElementById('initial-investment').value);
-            
-            const annualIncrease5y = parseFloat(document.getElementById('annual-increase-5y').value) / 100;
-            const annualIncrease10y = parseFloat(document.getElementById('annual-increase-10y').value) / 100;
-            const annualIncrease15y = parseFloat(document.getElementById('annual-increase-15y').value) / 100;
-            
-            const annualReturns5y = parseFloat(document.getElementById('annual-returns-5y').value) / 100;
-            const annualReturns10y = parseFloat(document.getElementById('annual-returns-10y').value) / 100;
-            const annualReturns15y = parseFloat(document.getElementById('annual-returns-15y').value) / 100;
-            
-            const monthlyReturns5y = calculateMonthlyReturn(annualReturns5y);
-            const monthlyReturns10y = calculateMonthlyReturn(annualReturns10y);
-            const monthlyReturns15y = calculateMonthlyReturn(annualReturns15y);
-            
-            // Update monthly returns display fields
-            document.getElementById('monthly-returns-5y').value = monthlyReturns5y.toFixed(2);
-            document.getElementById('monthly-returns-10y').value = monthlyReturns10y.toFixed(2);
-            document.getElementById('monthly-returns-15y').value = monthlyReturns15y.toFixed(2);
-            
-            // Calculate SIP returns
-            let portfolioValue5y = 0;
-            let portfolioValue10y = 0;
-            let portfolioValue15y = 0;
-            
-            let currentSipAmount5y = initialInvestment;
-            let currentSipAmount10y = initialInvestment;
-            let currentSipAmount15y = initialInvestment;
-            
-            // Clear the detailed table
-            const detailedTbody = document.getElementById('detailed-tbody');
-            detailedTbody.innerHTML = '';
-            
-            // Current date for the starting point of calculation
-            const currentDate = new Date();
-            const startMonth = currentDate.getMonth();
-            const startYear = currentDate.getFullYear();
-            
-            // Calculate month by month for 15 years (180 months)
-            for (let i = 0; i < 180; i++) {
-                const month = (startMonth + i) % 12;
-                const year = startYear + Math.floor((startMonth + i) / 12);
-                const monthYear = getMonthName(month) + "-" + (year.toString().substr(2, 2));
-                
-                // Calculate SIP amounts with annual increase (if applicable)
-                if (i > 0 && month === startMonth) {
-                    // Apply annual increase on the anniversary of the start month
-                    if (i <= 60) { // First 5 years
-                        currentSipAmount5y *= (1 + annualIncrease5y);
-                    }
-                    if (i <= 120) { // First 10 years
-                        currentSipAmount10y *= (1 + annualIncrease10y);
-                    }
-                    if (i <= 180) { // First 15 years
-                        currentSipAmount15y *= (1 + annualIncrease15y);
-                    }
+
+        // Calculate SIP returns
+        function calculateSIPReturns(initialSIP, annualReturn, annualIncrease, years) {
+            let portfolioValue = 0;
+            let currentSIP = initialSIP;
+            const monthlyReturn = calculateMonthlyReturn(annualReturn);
+            const totalMonths = years * 12;
+
+            for (let month = 0; month < totalMonths; month++) {
+                // Apply annual increase on the anniversary of the start month
+                if (month > 0 && month % 12 === 0) {
+                    currentSIP *= (1 + annualIncrease / 100);
                 }
-                
-                // Add new SIP amount to portfolio values
-                portfolioValue5y = i < 60 ? (portfolioValue5y * (1 + monthlyReturns5y / 100)) + currentSipAmount5y : portfolioValue5y;
-                portfolioValue10y = i < 120 ? (portfolioValue10y * (1 + monthlyReturns10y / 100)) + currentSipAmount10y : portfolioValue10y;
-                portfolioValue15y = i < 180 ? (portfolioValue15y * (1 + monthlyReturns15y / 100)) + currentSipAmount15y : portfolioValue15y;
-                
-                // Add row to detailed table for each month
-                if (i < 180) { // Display all 15 years
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${i + 1}</td>
-                        <td>${monthYear}</td>
-                        <td>${i < 60 ? Math.round(currentSipAmount5y) : '-'}</td>
-                        <td>${i < 60 ? Math.round(portfolioValue5y) : '-'}</td>
-                        <td>${i < 120 ? Math.round(currentSipAmount10y) : '-'}</td>
-                        <td>${i < 120 ? Math.round(portfolioValue10y) : '-'}</td>
-                        <td>${i < 180 ? Math.round(currentSipAmount15y) : '-'}</td>
-                        <td>${i < 180 ? Math.round(portfolioValue15y) : '-'}</td>
-                    `;
-                    detailedTbody.appendChild(row);
-                }
+
+                // Compound growth and add monthly SIP
+                portfolioValue = (portfolioValue * (1 + monthlyReturn / 100)) + currentSIP;
             }
-            
-            // Update summary table
-            document.getElementById('summary-sip-5y').textContent = formatCurrency(initialInvestment);
-            document.getElementById('summary-sip-10y').textContent = formatCurrency(initialInvestment);
-            document.getElementById('summary-sip-15y').textContent = formatCurrency(initialInvestment);
-            
-            document.getElementById('summary-increase-5y').textContent = (annualIncrease5y * 100).toFixed(0) + '%';
-            document.getElementById('summary-increase-10y').textContent = (annualIncrease10y * 100).toFixed(0) + '%';
-            document.getElementById('summary-increase-15y').textContent = (annualIncrease15y * 100).toFixed(0) + '%';
-            
-            document.getElementById('summary-returns-annual-5y').textContent = (annualReturns5y * 100).toFixed(0) + '%';
-            document.getElementById('summary-returns-annual-10y').textContent = (annualReturns10y * 100).toFixed(0) + '%';
-            document.getElementById('summary-returns-annual-15y').textContent = (annualReturns15y * 100).toFixed(0) + '%';
-            
-            document.getElementById('summary-returns-monthly-5y').textContent = monthlyReturns5y.toFixed(2) + '%';
-            document.getElementById('summary-returns-monthly-10y').textContent = monthlyReturns10y.toFixed(2) + '%';
-            document.getElementById('summary-returns-monthly-15y').textContent = monthlyReturns15y.toFixed(2) + '%';
-            
-            document.getElementById('summary-value-5y').textContent = formatCurrency(portfolioValue5y);
-            document.getElementById('summary-value-10y').textContent = formatCurrency(portfolioValue10y);
-            document.getElementById('summary-value-15y').textContent = formatCurrency(portfolioValue15y);
+
+            return {
+                portfolioValue: portfolioValue,
+                monthlyReturn: monthlyReturn
+            };
         }
-        
-        // Event listener for calculate button
-        document.getElementById('calculate').addEventListener('click', calculateSIP);
-        
-        // Event listeners for annual returns to calculate monthly returns
-        document.getElementById('annual-returns-5y').addEventListener('input', function() {
-            const annualReturn = parseFloat(this.value);
-            const monthlyReturn = calculateMonthlyReturn(annualReturn);
-            document.getElementById('monthly-returns-5y').value = monthlyReturn.toFixed(2);
+
+        // Calculate and update results
+        function updateResults() {
+            // 5 Years Calculation
+            const sip5y = parseFloat(document.getElementById('sip-5y').value);
+            const increase5y = parseFloat(document.getElementById('increase-5y').value);
+            const return5y = parseFloat(document.getElementById('return-5y').value);
+            const result5y = calculateSIPReturns(sip5y, return5y, increase5y, 5);
+            
+            document.getElementById('monthly-return-5y').value = result5y.monthlyReturn.toFixed(2);
+            document.getElementById('portfolio-5y').value = formatCurrency(result5y.portfolioValue);
+
+            // 10 Years Calculation
+            const sip10y = parseFloat(document.getElementById('sip-10y').value);
+            const increase10y = parseFloat(document.getElementById('increase-10y').value);
+            const return10y = parseFloat(document.getElementById('return-10y').value);
+            const result10y = calculateSIPReturns(sip10y, return10y, increase10y, 10);
+            
+            document.getElementById('monthly-return-10y').value = result10y.monthlyReturn.toFixed(2);
+            document.getElementById('portfolio-10y').value = formatCurrency(result10y.portfolioValue);
+
+            // 15 Years Calculation
+            const sip15y = parseFloat(document.getElementById('sip-15y').value);
+            const increase15y = parseFloat(document.getElementById('increase-15y').value);
+            const return15y = parseFloat(document.getElementById('return-15y').value);
+            const result15y = calculateSIPReturns(sip15y, return15y, increase15y, 15);
+            
+            document.getElementById('monthly-return-15y').value = result15y.monthlyReturn.toFixed(2);
+            document.getElementById('portfolio-15y').value = formatCurrency(result15y.portfolioValue);
+        }
+
+        // Event listeners for real-time monthly return calculation
+        ['return-5y', 'return-10y', 'return-15y'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function() {
+                const annualReturn = parseFloat(this.value);
+                const monthlyReturn = calculateMonthlyReturn(annualReturn);
+                
+                // Update corresponding monthly return field
+                const monthlyReturnFieldId = id.replace('return', 'monthly-return');
+                document.getElementById(monthlyReturnFieldId).value = monthlyReturn.toFixed(2);
+            });
         });
-        
-        document.getElementById('annual-returns-10y').addEventListener('input', function() {
-            const annualReturn = parseFloat(this.value);
-            const monthlyReturn = calculateMonthlyReturn(annualReturn);
-            document.getElementById('monthly-returns-10y').value = monthlyReturn.toFixed(2);
-        });
-        
-        document.getElementById('annual-returns-15y').addEventListener('input', function() {
-            const annualReturn = parseFloat(this.value);
-            const monthlyReturn = calculateMonthlyReturn(annualReturn);
-            document.getElementById('monthly-returns-15y').value = monthlyReturn.toFixed(2);
-        });
-        
+
+        // Calculate on button click
+        document.getElementById('calculate-btn').addEventListener('click', updateResults);
+
         // Initial calculation on page load
         window.addEventListener('load', function() {
-            // Set the initial monthly returns
-            const annualReturn5y = parseFloat(document.getElementById('annual-returns-5y').value);
-            const annualReturn10y = parseFloat(document.getElementById('annual-returns-10y').value);
-            const annualReturn15y = parseFloat(document.getElementById('annual-returns-15y').value);
-            
-            document.getElementById('monthly-returns-5y').value = calculateMonthlyReturn(annualReturn5y).toFixed(2);
-            document.getElementById('monthly-returns-10y').value = calculateMonthlyReturn(annualReturn10y).toFixed(2);
-            document.getElementById('monthly-returns-15y').value = calculateMonthlyReturn(annualReturn15y).toFixed(2);
-            
-            // Calculate SIP returns
-            calculateSIP();
+            // Trigger initial monthly returns calculation
+            ['5y', '10y', '15y'].forEach(period => {
+                const annualReturn = parseFloat(document.getElementById(`return-${period}`).value);
+                const monthlyReturn = calculateMonthlyReturn(annualReturn);
+                document.getElementById(`monthly-return-${period}`).value = monthlyReturn.toFixed(2);
+            });
+
+            // Perform initial calculation
+            updateResults();
         });
     </script>
 </body>
